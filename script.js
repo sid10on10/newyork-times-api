@@ -279,5 +279,7 @@ async function processData(section){
 }
 
 
-
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("home").click()
+   })
 
