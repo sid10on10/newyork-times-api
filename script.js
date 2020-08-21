@@ -211,6 +211,7 @@ async function getData(url){
 }
 
 async function processData(section){
+    main_div.innerHTML = ""
     let arr = await getData(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${api_key}`)
     data = arr["results"]
     for(i of data){
@@ -258,8 +259,8 @@ async function processData(section){
 
         var thumb_image = document.createElement("img");
         thumb_image.setAttribute("class","img-thumbnail");
-        thumb_image.setAttribute("src",`${i["multimedia"][1]["url"]}`);
-        thumb_image.setAttribute("style","width:150px;height:150px;")
+        thumb_image.setAttribute("src",`${i["multimedia"][0]["url"]}`);
+        thumb_image.setAttribute("style","width:300px;height:150px;")
 
         //append the image in the right
         right.append(thumb_image);
